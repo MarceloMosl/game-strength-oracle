@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import TitleSlide from './slides/TitleSlide';
+import CompetitionOverview from './slides/CompetitionOverview';
 import ProblemStatement from './slides/ProblemStatement';
 import CompetitionObjective from './slides/CompetitionObjective';
 import DataPreparation from './slides/DataPreparation';
@@ -14,6 +15,7 @@ import QASlide from './slides/QASlide';
 
 const slides = [
   { component: TitleSlide, title: 'Title' },
+  { component: CompetitionOverview, title: 'Competition Overview' },
   { component: ProblemStatement, title: 'Problem Statement' },
   { component: CompetitionObjective, title: 'Competition Objective' },
   { component: DataPreparation, title: 'Data Preparation' },

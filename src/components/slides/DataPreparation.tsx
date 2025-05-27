@@ -14,83 +14,87 @@ const DataPreparation = () => {
         <div className="space-y-6">
           <div className="bg-white/10 rounded-lg p-6 border border-white/20">
             <div className="flex items-center space-x-3 mb-4">
-              <FileText className="h-6 w-6 text-green-400" />
-              <h3 className="text-xl font-semibold text-white">Data Sources</h3>
+              <Trash2 className="h-6 w-6 text-red-400" />
+              <h3 className="text-xl font-semibold text-white">Column Removal</h3>
             </div>
-            <ul className="space-y-2 text-white/80">
-              <li>• <strong>train.csv:</strong> Training dataset with game features and outcomes</li>
-              <li>• <strong>test.csv:</strong> Test dataset for competition submission</li>
-              <li>• Multiple board games with diverse rulesets</li>
+            <p className="text-white/80 mb-3">
+              <strong>Dropped ~200 columns:</strong>
+            </p>
+            <ul className="space-y-2 text-white/80 text-sm">
+              <li>• All output columns</li>
+              <li>• NaN-heavy features</li>
+              <li>• Zero-variance columns</li>
+              <li>• Single-value columns</li>
+              <li>• Frequency, component, and rules columns</li>
+              <li>• Highly correlated features</li>
             </ul>
           </div>
           
           <div className="bg-white/10 rounded-lg p-6 border border-white/20">
             <div className="flex items-center space-x-3 mb-4">
-              <Trash2 className="h-6 w-6 text-red-400" />
-              <h3 className="text-xl font-semibold text-white">Data Cleaning</h3>
+              <FileText className="h-6 w-6 text-green-400" />
+              <h3 className="text-xl font-semibold text-white">Agent Parsing</h3>
             </div>
-            <ul className="space-y-2 text-white/80">
-              <li>• Dropped irrelevant columns</li>
-              <li>• Removed zero-variance features</li>
-              <li>• Handled missing values</li>
+            <p className="text-white/80 mb-3">
+              Split <code className="bg-black/30 px-1 rounded">agent1</code>/<code className="bg-black/30 px-1 rounded">agent2</code> strings into structured fields:
+            </p>
+            <ul className="space-y-2 text-white/80 text-sm">
+              <li>• <strong>Selection:</strong> Algorithm variant type</li>
+              <li>• <strong>ExpConst:</strong> Exploration constant</li>
+              <li>• <strong>Playout:</strong> Simulation strategy</li>
+              <li>• <strong>ScoreBounds:</strong> Value normalization</li>
             </ul>
           </div>
         </div>
         
         <div className="space-y-6">
-          <div className="bg-white/10 rounded-lg p-6 border border-white/20">
+          <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg p-6 border border-purple-400/30">
             <div className="flex items-center space-x-3 mb-4">
-              <Shuffle className="h-6 w-6 text-blue-400" />
-              <h3 className="text-xl font-semibold text-white">Agent String Parsing</h3>
+              <Shuffle className="h-6 w-6 text-purple-400" />
+              <h3 className="text-xl font-semibold text-white">Data Augmentation</h3>
             </div>
             <div className="space-y-3">
-              <p className="text-white/80">Converted agent configuration strings into structured features:</p>
-              <div className="bg-black/20 rounded p-3 font-mono text-sm text-green-300">
-                <div>"MCTS(exploration=1.4, playouts=1000)"</div>
-                <div className="text-white/60">↓</div>
-                <div>exploration_constant: 1.4</div>
-                <div>playouts_per_move: 1000</div>
+              <p className="text-white/80">
+                <strong>Agent Role Inversion:</strong> Used <code className="bg-black/30 px-1 rounded">augment_inversion()</code>
+              </p>
+              <div className="bg-black/20 rounded p-3 font-mono text-sm">
+                <div className="text-green-300">Original: Agent1 vs Agent2</div>
+                <div className="text-white/60 my-1">• AdvantageP1 = 0.7</div>
+                <div className="text-blue-300 mt-2">Augmented: Agent2 vs Agent1</div>
+                <div className="text-white/60">• AdvantageP1 = 1 - 0.7 = 0.3</div>
               </div>
+              <p className="text-white/70 text-sm">
+                <strong>Result:</strong> Doubled dataset size, improved generalization
+              </p>
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg p-6 border border-purple-400/30">
-            <h3 className="text-xl font-semibold text-purple-300 mb-4">Data Augmentation</h3>
-            <p className="text-white/80 mb-3">
-              <strong>Agent Role Inversion:</strong> Created symmetric training examples
-            </p>
-            <div className="text-sm text-white/70">
-              Original: Agent1 vs Agent2 → Utility = +0.6<br/>
-              Augmented: Agent2 vs Agent1 → Utility = -0.6
+          <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-6 border border-blue-400/30">
+            <h3 className="text-xl font-semibold text-white mb-4">Processing Summary</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-red-400">~200</div>
+                <div className="text-sm text-white/70">Columns Dropped</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-400">8</div>
+                <div className="text-sm text-white/70">Agent Parameters</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-400">2x</div>
+                <div className="text-sm text-white/70">Dataset Size</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-400">0</div>
+                <div className="text-sm text-white/70">Missing Values</div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="bg-white/5 rounded-lg p-6 border border-white/10">
-        <h3 className="text-lg font-semibold text-white mb-4">Key Data Transformations</h3>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-blue-400">~50%</div>
-            <div className="text-sm text-white/70">Data size increase from augmentation</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-green-400">15+</div>
-            <div className="text-sm text-white/70">Parsed agent parameters</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-yellow-400">200+</div>
-            <div className="text-sm text-white/70">Game features retained</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-purple-400">0</div>
-            <div className="text-sm text-white/70">Missing values after cleaning</div>
           </div>
         </div>
       </div>
       
       <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: Emphasize the importance of data augmentation in creating a balanced, symmetric dataset for better model generalization.
+        Speaker Note: We aggressively pruned irrelevant features to reduce noise, then parsed and expanded agent config strings. Inversion augmentation doubled our training examples, improving generalization.
       </div>
     </div>
   );

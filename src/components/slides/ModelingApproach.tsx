@@ -31,16 +31,15 @@ const ModelingApproach = () => {
           <div className="bg-gradient-to-br from-green-600/20 to-teal-600/20 rounded-lg p-6 border border-green-400/30">
             <div className="flex items-center space-x-3 mb-4">
               <Settings className="h-6 w-6 text-green-400" />
-              <h3 className="text-xl font-semibold text-white">Hyperparameter Tuning</h3>
+              <h3 className="text-xl font-semibold text-white">Hyperparameters (Optuna)</h3>
             </div>
             <div className="space-y-3">
-              <h4 className="text-lg font-semibold text-green-300">Optuna Optimization</h4>
-              <ul className="space-y-2 text-white/80 text-sm">
-                <li>• <strong>Learning Rate:</strong> 0.01 - 0.3</li>
-                <li>• <strong>Tree Depth:</strong> 4 - 10</li>
-                <li>• <strong>L2 Regularization:</strong> 1 - 10</li>
-                <li>• <strong>Iterations:</strong> 500 - 2000</li>
-              </ul>
+              <div className="bg-black/20 rounded p-3 font-mono text-sm">
+                <div className="text-green-300">learning_rate = 0.06855</div>
+                <div className="text-blue-300">depth = 5</div>
+                <div className="text-yellow-300">l2_leaf_reg = 1.2173</div>
+                <div className="text-purple-300">iterations = 686</div>
+              </div>
             </div>
           </div>
         </div>
@@ -54,10 +53,10 @@ const ModelingApproach = () => {
             <div className="space-y-3">
               <h4 className="text-lg font-semibold text-orange-300">Group-Aware Cross-Validation</h4>
               <ul className="space-y-2 text-white/80 text-sm">
-                <li>• Grouped by <code className="bg-black/30 px-1 rounded">GameRulesetName</code></li>
-                <li>• Prevents data leakage</li>
-                <li>• Ensures game-level generalization</li>
-                <li>• 5-fold stratified splits</li>
+                <li>• 80/20 train/validation split</li>
+                <li>• Early stopping (100 rounds)</li>
+                <li>• 5-fold GroupKFold on <code className="bg-black/30 px-1 rounded">GameRulesetName</code></li>
+                <li>• Prevents data leakage between game types</li>
               </ul>
             </div>
           </div>
@@ -65,13 +64,13 @@ const ModelingApproach = () => {
           <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-lg p-6 border border-purple-400/30">
             <div className="flex items-center space-x-3 mb-4">
               <TrendingUp className="h-6 w-6 text-purple-400" />
-              <h3 className="text-xl font-semibold text-white">Model Training</h3>
+              <h3 className="text-xl font-semibold text-white">Training Details</h3>
             </div>
             <ul className="space-y-2 text-white/80 text-sm">
+              <li>• <strong>Metric:</strong> RMSE on held-out folds</li>
               <li>• Early stopping to prevent overfitting</li>
               <li>• Feature importance tracking</li>
               <li>• Validation curve monitoring</li>
-              <li>• Ensemble of best trials</li>
             </ul>
           </div>
         </div>
@@ -84,38 +83,38 @@ const ModelingApproach = () => {
             <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mx-auto">
               <span className="text-2xl">🔍</span>
             </div>
-            <h4 className="font-semibold text-white">Search Space</h4>
-            <p className="text-sm text-white/70">Define hyperparameter ranges for Optuna optimization</p>
+            <h4 className="font-semibold text-white">Optuna Search</h4>
+            <p className="text-sm text-white/70">Hyperparameter optimization with Bayesian search</p>
           </div>
           
           <div className="text-center space-y-3">
             <div className="w-16 h-16 bg-green-500/30 rounded-full flex items-center justify-center mx-auto">
               <span className="text-2xl">⚡</span>
             </div>
-            <h4 className="font-semibold text-white">Optimization</h4>
-            <p className="text-sm text-white/70">Run 100+ trials with Bayesian optimization</p>
+            <h4 className="font-semibold text-white">CatBoost Training</h4>
+            <p className="text-sm text-white/70">Native categorical handling with gradient boosting</p>
           </div>
           
           <div className="text-center space-y-3">
             <div className="w-16 h-16 bg-orange-500/30 rounded-full flex items-center justify-center mx-auto">
               <span className="text-2xl">✅</span>
             </div>
-            <h4 className="font-semibold text-white">Validation</h4>
-            <p className="text-sm text-white/70">Group K-fold CV on game rulesets</p>
+            <h4 className="font-semibold text-white">Group K-Fold CV</h4>
+            <p className="text-sm text-white/70">Game-aware validation to prevent leakage</p>
           </div>
           
           <div className="text-center space-y-3">
             <div className="w-16 h-16 bg-purple-500/30 rounded-full flex items-center justify-center mx-auto">
               <span className="text-2xl">🎯</span>
             </div>
-            <h4 className="font-semibold text-white">Selection</h4>
-            <p className="text-sm text-white/70">Choose best model based on RMSE</p>
+            <h4 className="font-semibold text-white">Best Model</h4>
+            <p className="text-sm text-white/70">Selection based on cross-validation RMSE</p>
           </div>
         </div>
       </div>
       
       <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: Emphasize the importance of group-aware validation to ensure the model generalizes to unseen games, not just unseen game instances.
+        Speaker Note: CatBoost natively handles our categorical agent parameters—Optuna tuning found these optimal settings, yielding stable RMSE across folds with robust generalization.
       </div>
     </div>
   );

@@ -20,19 +20,19 @@ const Conclusion = () => {
             <ul className="space-y-3 text-white/80">
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Built robust, generalizable prediction pipeline</span>
+                <span>Built robust pipeline predicting head-to-head MCTS variant strength</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Achieved strong cross-validation performance (RMSE: 0.847)</span>
+                <span>Achieved consistent cross-validation performance (RMSE: 0.1197)</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Demonstrated generalizable approach across hundreds of board games</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
                 <span>Identified critical features for algorithm selection</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Demonstrated game-agnostic generalization</span>
               </li>
             </ul>
           </div>
@@ -40,20 +40,20 @@ const Conclusion = () => {
           <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-6 border border-blue-400/30">
             <div className="flex items-center space-x-3 mb-4">
               <Lightbulb className="h-6 w-6 text-blue-400" />
-              <h3 className="text-xl font-semibold text-white">Key Discoveries</h3>
+              <h3 className="text-xl font-semibold text-white">Key Drivers</h3>
             </div>
             <ul className="space-y-3 text-white/80">
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span><strong>Exploration constant</strong> is the primary performance driver</span>
+                <span><strong>Agent exploration constants</strong> dominate performance differences</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span><strong>Game complexity</strong> strongly influences optimal algorithm choice</span>
+                <span><strong>Game complexity metrics</strong> strongly influence optimal choices</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span><strong>Computational efficiency</strong> becomes critical in complex games</span>
+                <span><strong>Game rules and structure</strong> provide crucial context</span>
               </li>
             </ul>
           </div>
@@ -72,15 +72,11 @@ const Conclusion = () => {
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Reduces computational costs by 60-80%</span>
+                <span>Provides data-driven algorithm recommendations</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
                 <span>Enables rapid deployment of optimal AI systems</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Provides data-driven algorithm recommendations</span>
               </li>
             </ul>
           </div>
@@ -88,7 +84,7 @@ const Conclusion = () => {
           <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-lg p-6 border border-orange-400/30">
             <div className="flex items-center space-x-3 mb-4">
               <ArrowRight className="h-6 w-6 text-orange-400" />
-              <h3 className="text-xl font-semibold text-white">Future Directions</h3>
+              <h3 className="text-xl font-semibold text-white">Future Work</h3>
             </div>
             <ul className="space-y-3 text-white/80">
               <li className="flex items-start space-x-2">
@@ -112,7 +108,7 @@ const Conclusion = () => {
         <h3 className="text-2xl font-bold text-white mb-4">Project Success Metrics</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
-            <div className="text-3xl font-bold text-green-400">0.847</div>
+            <div className="text-3xl font-bold text-green-400">0.1197</div>
             <div className="text-sm text-white/70">Final RMSE Score</div>
           </div>
           <div>
@@ -124,8 +120,8 @@ const Conclusion = () => {
             <div className="text-sm text-white/70">Board Games Analyzed</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-yellow-400">80%</div>
-            <div className="text-sm text-white/70">Computational Savings</div>
+            <div className="text-3xl font-bold text-yellow-400">5-Fold</div>
+            <div className="text-sm text-white/70">Cross-Validation</div>
           </div>
         </div>
       </div>
@@ -137,7 +133,7 @@ const Conclusion = () => {
       </div>
       
       <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: Emphasize the paradigm shift from manual algorithm selection to automated, data-driven recommendations that scale across diverse game domains.
+        Speaker Note: Our model not only excels on RMSE but also gives actionable insights on which MCTS settings to choose per game, revolutionizing AI algorithm selection.
       </div>
     </div>
   );

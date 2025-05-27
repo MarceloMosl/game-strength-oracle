@@ -10,56 +10,47 @@ const FeatureEngineering = () => {
         <h2 className="text-4xl font-bold text-white">Feature Engineering</h2>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-6 border border-blue-400/30">
-            <div className="flex items-center space-x-3 mb-4">
-              <Calculator className="h-6 w-6 text-cyan-400" />
-              <h3 className="text-xl font-semibold text-white">Efficiency Metrics</h3>
+      <div className="bg-white/10 rounded-lg p-6 border border-white/20 mb-8">
+        <h3 className="text-2xl font-semibold text-white mb-6 text-center">17 New Engineered Features</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg p-4 border border-blue-400/30">
+              <h4 className="font-semibold text-blue-300 mb-3">Efficiency Metrics</h4>
+              <ul className="space-y-2 text-white/80 text-sm">
+                <li>• <strong>Playouts/Moves:</strong> PlayoutsPerSecond / (MovesPerSecond + 1e-15)</li>
+                <li>• <strong>EfficiencyPerPlayout:</strong> Computational efficiency ratio</li>
+                <li>• <strong>ActionTimeEfficiency:</strong> Decision speed optimization</li>
+              </ul>
             </div>
-            <ul className="space-y-2 text-white/80">
-              <li>• <strong>Playouts per Move:</strong> Search intensity measure</li>
-              <li>• <strong>Action Time Efficiency:</strong> Speed vs. thinking time ratio</li>
-              <li>• <strong>Search Depth Ratio:</strong> Exploration vs. exploitation balance</li>
-            </ul>
+            
+            <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg p-4 border border-green-400/30">
+              <h4 className="font-semibold text-green-300 mb-3">Balance Interactions</h4>
+              <ul className="space-y-2 text-white/80 text-sm">
+                <li>• <strong>AdvantageBalanceRatio:</strong> Fairness measurement</li>
+                <li>• <strong>AdvantageTimeImpact:</strong> Time-advantage correlation</li>
+                <li>• <strong>ComplexityBalanceInteraction:</strong> Balance × GameTreeComplexity</li>
+              </ul>
+            </div>
           </div>
           
-          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg p-6 border border-green-400/30">
-            <div className="flex items-center space-x-3 mb-4">
-              <BarChart className="h-6 w-6 text-emerald-400" />
-              <h3 className="text-xl font-semibold text-white">Complexity Ratios</h3>
+          <div className="space-y-4">
+            <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg p-4 border border-purple-400/30">
+              <h4 className="font-semibold text-purple-300 mb-3">Complexity Features</h4>
+              <ul className="space-y-2 text-white/80 text-sm">
+                <li>• <strong>OverallComplexity:</strong> StateTreeComplexity + GameTreeComplexity</li>
+                <li>• <strong>ComplexityRatio:</strong> GameTree vs StateTree comparison</li>
+                <li>• <strong>DecisionComplexity:</strong> Branch factor analysis</li>
+              </ul>
             </div>
-            <ul className="space-y-2 text-white/80">
-              <li>• <strong>GameTree/StateTree Complexity:</strong> Game difficulty indicator</li>
-              <li>• <strong>Branching Factor Ratios:</strong> Decision space analysis</li>
-              <li>• <strong>Move Complexity Index:</strong> Strategic depth measure</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="space-y-6">
-          <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg p-6 border border-purple-400/30">
-            <div className="flex items-center space-x-3 mb-4">
-              <Target className="h-6 w-6 text-pink-400" />
-              <h3 className="text-xl font-semibold text-white">Advantage Features</h3>
+            
+            <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-lg p-4 border border-orange-400/30">
+              <h4 className="font-semibold text-orange-300 mb-3">Additional Ratios</h4>
+              <ul className="space-y-2 text-white/80 text-sm">
+                <li>• Strategic depth measurements</li>
+                <li>• Performance normalization factors</li>
+                <li>• Game-specific adaptation metrics</li>
+              </ul>
             </div>
-            <ul className="space-y-2 text-white/80">
-              <li>• <strong>Exploration Constant Difference:</strong> UCB1 parameter gaps</li>
-              <li>• <strong>Playout Budget Ratio:</strong> Computational resource allocation</li>
-              <li>• <strong>Policy Strength Comparison:</strong> Heuristic quality difference</li>
-            </ul>
-          </div>
-          
-          <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-lg p-6 border border-orange-400/30">
-            <div className="flex items-center space-x-3 mb-4">
-              <Zap className="h-6 w-6 text-orange-400" />
-              <h3 className="text-xl font-semibold text-white">Interaction Features</h3>
-            </div>
-            <ul className="space-y-2 text-white/80">
-              <li>• <strong>Game × Agent Interactions:</strong> Context-specific performance</li>
-              <li>• <strong>Balance Metrics:</strong> Symmetric vs. asymmetric games</li>
-              <li>• <strong>Outcome Uniformity:</strong> Predictability measures</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -94,11 +85,21 @@ const FeatureEngineering = () => {
             <div className="text-white font-medium">Interaction Terms</div>
             <div className="text-sm text-white/60">Context-aware features</div>
           </div>
+          
+          <div className="text-blue-400 text-2xl">→</div>
+          
+          <div className="text-center">
+            <div className="w-16 h-16 bg-orange-500/30 rounded-full flex items-center justify-center mb-3">
+              <span className="text-2xl">📈</span>
+            </div>
+            <div className="text-white font-medium">17 New Features</div>
+            <div className="text-sm text-white/60">Enhanced prediction power</div>
+          </div>
         </div>
       </div>
       
       <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: Highlight how these engineered features capture the essence of MCTS performance rather than relying solely on raw parameters.
+        Speaker Note: These ratios and interactions capture efficiency and complexity dynamics between agents and games, providing the model with meaningful signals for prediction.
       </div>
     </div>
   );
