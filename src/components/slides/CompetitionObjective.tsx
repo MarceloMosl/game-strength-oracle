@@ -69,9 +69,7 @@ const CompetitionObjective = () => {
         </div>
       </div>
       
-      <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: Highlight the practical value - this eliminates trial-and-error approach to algorithm selection.
-      </div>
+      
     </div>
   );
 };

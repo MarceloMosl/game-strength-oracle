@@ -64,9 +64,7 @@ const QASlide = () => {
       </div>
       
       <div className="mt-12">
-        <p className="text-lg text-white/60">
-          Contact: <span className="text-blue-400">marcelo.mosl@example.com</span>
-        </p>
+       
         <p className="text-sm text-white/50 mt-2">
           Competition: UM – Game-Playing Strength of MCTS Variants | Kaggle
         </p>

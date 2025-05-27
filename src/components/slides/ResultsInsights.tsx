@@ -124,9 +124,7 @@ const ResultsInsights = () => {
         </div>
       </div>
       
-      <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: These features—game rules, agent selection policy, and complexity metrics—drive the model's predictions. The consistent RMSE across folds demonstrates robust generalization.
-      </div>
+     
     </div>
   );
 };

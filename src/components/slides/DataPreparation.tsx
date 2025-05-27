@@ -93,9 +93,6 @@ const DataPreparation = () => {
         </div>
       </div>
       
-      <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: We aggressively pruned irrelevant features to reduce noise, then parsed and expanded agent config strings. Inversion augmentation doubled our training examples, improving generalization.
-      </div>
     </div>
   );
 };

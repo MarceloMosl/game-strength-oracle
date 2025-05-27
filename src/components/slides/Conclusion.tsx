@@ -132,9 +132,7 @@ const Conclusion = () => {
         </p>
       </div>
       
-      <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: Our model not only excels on RMSE but also gives actionable insights on which MCTS settings to choose per game, revolutionizing AI algorithm selection.
-      </div>
+     
     </div>
   );
 };

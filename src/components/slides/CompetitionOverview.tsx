@@ -97,9 +97,7 @@ const CompetitionOverview = () => {
         </div>
       </div>
       
-      <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: This competition challenges us to solve a fundamental problem in game AI: automatically selecting the best algorithm variant without expensive trial-and-error testing.
-      </div>
+     
     </div>
   );
 };

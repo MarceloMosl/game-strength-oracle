@@ -98,9 +98,7 @@ const FeatureEngineering = () => {
         </div>
       </div>
       
-      <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: These ratios and interactions capture efficiency and complexity dynamics between agents and games, providing the model with meaningful signals for prediction.
-      </div>
+      
     </div>
   );
 };

@@ -58,9 +58,7 @@ const ProblemStatement = () => {
         </div>
       </div>
       
-      <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: Emphasize the practical importance of algorithm selection in game AI and the gap this project fills.
-      </div>
+     
     </div>
   );
 };

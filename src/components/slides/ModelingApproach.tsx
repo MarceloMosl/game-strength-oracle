@@ -113,9 +113,7 @@ const ModelingApproach = () => {
         </div>
       </div>
       
-      <div className="mt-8 text-sm text-white/60 italic text-center">
-        Speaker Note: CatBoost natively handles our categorical agent parameters—Optuna tuning found these optimal settings, yielding stable RMSE across folds with robust generalization.
-      </div>
+     
     </div>
   );
 };
