@@ -24,7 +24,7 @@ const Conclusion = () => {
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Achieved consistent cross-validation performance (RMSE: 0.1197)</span>
+                <span>Achieved consistent cross-validation performance (RMSE: 0.48792)</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
@@ -108,7 +108,7 @@ const Conclusion = () => {
         <h3 className="text-2xl font-bold text-white mb-4">Project Success Metrics</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
-            <div className="text-3xl font-bold text-green-400">0.1197</div>
+            <div className="text-3xl font-bold text-green-400">0.48792</div>
             <div className="text-sm text-white/70">Final RMSE Score</div>
           </div>
           <div>
