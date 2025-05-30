@@ -24,7 +24,7 @@ const Conclusion = () => {
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Achieved consistent cross-validation performance (RMSE: 0.48792)</span>
+                <span>Achieved consistent performance (RMSE: 0.48792)</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
@@ -112,16 +112,16 @@ const Conclusion = () => {
             <div className="text-sm text-white/70">Final RMSE Score</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-blue-400">247</div>
-            <div className="text-sm text-white/70">Engineered Features</div>
+            <div className="text-3xl font-bold text-blue-400">50</div>
+            <div className="text-sm text-white/70">Selected Features Used</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-purple-400">100+</div>
             <div className="text-sm text-white/70">Board Games Analyzed</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-yellow-400">5-Fold</div>
-            <div className="text-sm text-white/70">Cross-Validation</div>
+            <div className="text-3xl font-bold text-yellow-400">80/20</div>
+            <div className="text-sm text-white/70">Train-Test Split</div>
           </div>
         </div>
       </div>

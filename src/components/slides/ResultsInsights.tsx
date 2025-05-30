@@ -42,44 +42,47 @@ const ResultsInsights = () => {
           <div className="bg-white/10 rounded-lg p-6 border border-white/20">
             <h3 className="text-xl font-semibold text-white mb-4 flex items-center space-x-2">
               <Target className="h-5 w-5 text-blue-400" />
-              <span>Top 10 Features</span>
+              <span>Top 10 Features from Model</span>
             </h3>
             <div className="space-y-3 text-sm">
               <div className="flex justify-between items-center p-2 bg-blue-500/20 rounded">
                 <span className="text-white font-medium">1. LudRules</span>
-                <span className="text-blue-300 font-mono font-bold">32.4%</span>
+                <span className="text-blue-300 font-mono font-bold">High</span>
               </div>
               <div className="flex justify-between items-center p-2 bg-green-500/20 rounded">
                 <span className="text-white font-medium">2. agent2_selection</span>
-                <span className="text-green-300 font-mono font-bold">18.7%</span>
+                <span className="text-green-300 font-mono font-bold">High</span>
               </div>
               <div className="flex justify-between items-center p-2 bg-yellow-500/20 rounded">
-                <span className="text-white font-medium">3. AdvantageP2</span>
-                <span className="text-yellow-300 font-mono font-bold">15.2%</span>
+                <span className="text-white font-medium">3. agent2_expconst</span>
+                <span className="text-yellow-300 font-mono font-bold">High</span>
               </div>
               <div className="flex justify-between items-center p-2 bg-purple-500/20 rounded">
-                <span className="text-white font-medium">4. Drawishness</span>
-                <span className="text-purple-300 font-mono font-bold">12.8%</span>
+                <span className="text-white font-medium">4. agent1_selection</span>
+                <span className="text-purple-300 font-mono font-bold">High</span>
               </div>
               <div className="flex justify-between items-center p-2 bg-red-500/20 rounded">
-                <span className="text-white font-medium">5. GameTreeComplexity</span>
-                <span className="text-red-300 font-mono font-bold">11.3%</span>
+                <span className="text-white font-medium">5. Drawishness</span>
+                <span className="text-red-300 font-mono font-bold">High</span>
               </div>
               <div className="space-y-2">
                 {[
-                  { name: '6. DecisionFactorMedian', value: '8.9%', color: 'cyan' },
-                  { name: '7. PlayoutsPerSecond', value: '6.2%', color: 'lime' },
-                  { name: '8. Completion', value: '4.5%', color: 'orange' },
-                  { name: '9. Balance', value: '3.8%', color: 'pink' },
-                  { name: '10. OverallComplexity', value: '2.9%', color: 'indigo' },
+                  { name: '6. agent2_playout', color: 'cyan' },
+                  { name: '7. agent1_expconst', color: 'lime' },
+                  { name: '8. agent1_playout', color: 'orange' },
+                  { name: '9. EnglishRules', color: 'pink' },
+                  { name: '10. AdvantageP2', color: 'indigo' },
                 ].map((item, index) => (
                   <div key={index} className="flex justify-between items-center">
                     <span className="text-white/80">{item.name}</span>
-                    <span className={`text-${item.color}-400 font-mono`}>{item.value}</span>
+                    <span className={`text-${item.color}-400 font-mono`}>Medium</span>
                   </div>
                 ))}
               </div>
             </div>
+            <p className="text-xs text-white/60 mt-3">
+              * Importance rankings from fi_df output (exact percentages calculated during model training)
+            </p>
           </div>
         </div>
         
@@ -98,14 +101,14 @@ const ResultsInsights = () => {
           <Eye className="h-8 w-8 text-blue-400 mx-auto mb-4" />
           <h3 className="text-lg font-semibold text-white mb-2">Model Stability</h3>
           <div className="text-2xl font-bold text-blue-300">±0.004</div>
-          <p className="text-xs text-white/70 mt-2">Standard deviation across folds</p>
+          <p className="text-xs text-white/70 mt-2">From separate full CV analysis</p>
         </div>
         
         <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg p-6 border border-purple-400/30 text-center">
           <BarChart3 className="h-8 w-8 text-purple-400 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-white mb-2">Active Features</h3>
-          <div className="text-2xl font-bold text-purple-300">247</div>
-          <p className="text-xs text-white/70 mt-2">After engineering and selection</p>
+          <h3 className="text-lg font-semibold text-white mb-2">Selected Features</h3>
+          <div className="text-2xl font-bold text-purple-300">50</div>
+          <p className="text-xs text-white/70 mt-2">Features used in final model</p>
         </div>
         
         <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg p-6 border border-green-400/30 text-center">
@@ -117,9 +120,9 @@ const ResultsInsights = () => {
         
         <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-lg p-6 border border-yellow-400/30 text-center">
           <Target className="h-8 w-8 text-yellow-400 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-white mb-2">Improvement</h3>
-          <div className="text-2xl font-bold text-yellow-300">-6.2%</div>
-          <p className="text-xs text-white/70 mt-2">RMSE reduction from baseline</p>
+          <h3 className="text-lg font-semibold text-white mb-2">Validation</h3>
+          <div className="text-2xl font-bold text-yellow-300">80/20</div>
+          <p className="text-xs text-white/70 mt-2">Train-test split for Optuna</p>
         </div>
       </div>
     </div>

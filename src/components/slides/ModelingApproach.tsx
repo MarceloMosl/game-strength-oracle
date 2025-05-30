@@ -51,13 +51,16 @@ const ModelingApproach = () => {
               <h3 className="text-xl font-semibold text-white">Validation Strategy</h3>
             </div>
             <div className="space-y-3">
-              <h4 className="text-lg font-semibold text-orange-300">Group-Aware Cross-Validation</h4>
+              <h4 className="text-lg font-semibold text-orange-300">Train-Test Split Validation</h4>
               <ul className="space-y-2 text-white/80 text-sm">
-                <li>• 80/20 train/validation split</li>
+                <li>• 80/20 train/validation split for Optuna</li>
                 <li>• Early stopping (100 rounds)</li>
-                <li>• 5-fold GroupKFold on <code className="bg-black/30 px-1 rounded">GameRulesetName</code></li>
-                <li>• Prevents data leakage between game types</li>
+                <li>• Single model training on full processed dataset</li>
+                <li>• Hyperparameter optimization via Optuna objective</li>
               </ul>
+              <p className="text-xs text-white/60 mt-3">
+                Note: GroupKFold used in prior analysis stage for parameter determination
+              </p>
             </div>
           </div>
           
@@ -67,10 +70,10 @@ const ModelingApproach = () => {
               <h3 className="text-xl font-semibold text-white">Training Details</h3>
             </div>
             <ul className="space-y-2 text-white/80 text-sm">
-              <li>• <strong>Metric:</strong> RMSE on held-out folds</li>
+              <li>• <strong>Metric:</strong> RMSE on validation split</li>
               <li>• Early stopping to prevent overfitting</li>
               <li>• Feature importance tracking</li>
-              <li>• Validation curve monitoring</li>
+              <li>• Single final model on full training set</li>
             </ul>
           </div>
         </div>
@@ -84,7 +87,7 @@ const ModelingApproach = () => {
               <span className="text-2xl">🔍</span>
             </div>
             <h4 className="font-semibold text-white">Optuna Search</h4>
-            <p className="text-sm text-white/70">Hyperparameter optimization with Bayesian search</p>
+            <p className="text-sm text-white/70">Hyperparameter optimization with 80/20 validation</p>
           </div>
           
           <div className="text-center space-y-3">
@@ -99,16 +102,16 @@ const ModelingApproach = () => {
             <div className="w-16 h-16 bg-orange-500/30 rounded-full flex items-center justify-center mx-auto">
               <span className="text-2xl">✅</span>
             </div>
-            <h4 className="font-semibold text-white">Group K-Fold CV</h4>
-            <p className="text-sm text-white/70">Game-aware validation to prevent leakage</p>
+            <h4 className="font-semibold text-white">Train-Test Split</h4>
+            <p className="text-sm text-white/70">80/20 split for Optuna validation</p>
           </div>
           
           <div className="text-center space-y-3">
             <div className="w-16 h-16 bg-purple-500/30 rounded-full flex items-center justify-center mx-auto">
               <span className="text-2xl">🎯</span>
             </div>
-            <h4 className="font-semibold text-white">Best Model</h4>
-            <p className="text-sm text-white/70">Selection based on cross-validation RMSE</p>
+            <h4 className="font-semibold text-white">Final Model</h4>
+            <p className="text-sm text-white/70">Single model trained on full processed dataset</p>
           </div>
         </div>
       </div>
