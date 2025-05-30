@@ -22,8 +22,8 @@ const ResultsInsights = () => {
           </div>
           <CrossValidationChart />
           <div className="mt-4 text-center">
-            <div className="text-2xl font-bold text-green-300">0.1197</div>
-            <div className="text-sm text-white/70">Average RMSE</div>
+            <div className="text-2xl font-bold text-green-300">0.48792</div>
+            <div className="text-sm text-white/70">Final RMSE Score</div>
           </div>
         </div>
         
@@ -111,8 +111,8 @@ const ResultsInsights = () => {
         <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg p-6 border border-green-400/30 text-center">
           <Award className="h-8 w-8 text-green-400 mx-auto mb-4" />
           <h3 className="text-lg font-semibold text-white mb-2">Final RMSE</h3>
-          <div className="text-2xl font-bold text-green-300">0.1197</div>
-          <p className="text-xs text-white/70 mt-2">Cross-validation average</p>
+          <div className="text-2xl font-bold text-green-300">0.48792</div>
+          <p className="text-xs text-white/70 mt-2">Competition submission score</p>
         </div>
         
         <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-lg p-6 border border-yellow-400/30 text-center">
